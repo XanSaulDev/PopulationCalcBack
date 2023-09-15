@@ -17,7 +17,8 @@ class CalcPopulation:
         self.population_values_across_years =  [ self.__calculate_population(year) for year in self.time_in_years ]
 
     def __calculate_population(self, year):
-        return self.init_population * math.exp(self.growth_rate_per_year * year)
+        print(self.init_population * math.exp(self.growth_rate_per_year * year), ".2f")
+        return float(format(self.init_population * math.exp(self.growth_rate_per_year * year), ".2f"))
         # return math.ceil(self.init_population * (1 + self.growth_rate_per_year) ** year)
     
     def generate_graph_in_hex(self):
@@ -27,7 +28,9 @@ class CalcPopulation:
 
         ax.plot(self.time_in_years, self.population_values_across_years, marker='o', linestyle='-')
         ax.grid()
-
+        ax.set_xlabel("Year's")
+        ax.set_ylabel('Population')
+        ax.set_title(f'Population Growth with a Growth Rate of {self.growth_rate_per_year} per Year')
         image_data = self.convert_to_hexadecimal(figure)
         
         return f"data:image/png;base64,{image_data}"
@@ -46,6 +49,3 @@ class CalcPopulation:
     def get_population_values_across_years(self):
         return self.population_values_across_years
     
-        # plt.xlabel('Años')
-        # plt.ylabel('Población')
-        # plt.title('Crecimiento de Población con Tasa de Crecimiento de 0.1 por')
