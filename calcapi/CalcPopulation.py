@@ -28,9 +28,9 @@ class CalcPopulation:
 
         ax.plot(self.time_in_years, self.population_values_across_years, marker='o', linestyle='-')
         ax.grid()
-        ax.set_xlabel("Year's")
-        ax.set_ylabel('Population')
-        ax.set_title(f'Population Growth with a Growth Rate of {self.growth_rate_per_year} per Year')
+        ax.set_xlabel("Años")
+        ax.set_ylabel('Población')
+        ax.set_title(f'Crecimiento de Población con Tasa de Crecimiento de {self.growth_rate_per_year} por Año')
         image_data = self.convert_to_hexadecimal(figure)
         
         return f"data:image/png;base64,{image_data}"

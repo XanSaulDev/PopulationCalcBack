@@ -76,7 +76,6 @@ TEMPLATES = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://population-calc-front-vercel.vercel.app/s"
 ]
 
 WSGI_APPLICATION = 'populationCalc.wsgi.application'
