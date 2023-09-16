@@ -17,9 +17,9 @@ class CalcPopulation:
         self.population_values_across_years =  [ self.__calculate_population(year) for year in self.time_in_years ]
 
     def __calculate_population(self, year):
-        print(self.init_population * math.exp(self.growth_rate_per_year * year), ".2f")
-        return float(format(self.init_population * math.exp(self.growth_rate_per_year * year), ".2f"))
-        # return math.ceil(self.init_population * (1 + self.growth_rate_per_year) ** year)
+        #  math.e ** (self.growth_rate_per_year * year) == math.exp(self.growth_rate_per_year * year )
+        # return float(format( self.init_population * math.e ** (self.growth_rate_per_year * year), ".2f")) 
+        return float(format( self.init_population * math.exp(self.growth_rate_per_year * year ), ".2f"))
     
     def generate_graph_in_hex(self):
 
